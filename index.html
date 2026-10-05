@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Define Aura — Free Fire mods, hacks and community hub.">
+    <title>Define Aura</title>
+    <link rel="icon" href="assets/logo/define.webp">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-grid"></div>
+            <div class="hero-content reveal">
+                <div class="eyebrow"><span class="status-dot"></span><span data-site="eyebrow"></span></div>
+                <h1>PLAY DIFFERENT<br><em>with DEFINE AURA.</em></h1>
+                <p data-site="heroDescription"></p>
+                <div class="hero-actions">
+                    <a class="button button-red" href="pages/mods.html">Explore Mods <span>→</span></a>
+                    <a class="button button-dark" data-discord-link href="#">Join Discord <span>↗</span></a>
+                </div>
+                <div class="hero-stats" id="heroStats"></div>
+            </div>
+
+            <div class="hero-logo reveal">
+                <div class="logo-orbit orbit-a"></div>
+                <div class="logo-orbit orbit-b"></div>
+                <img src="assets/logo/define.webp" alt="Define Aura">
+                <span>DA / 001</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-head reveal">
+                <div>
+                    <small>01 / MODS</small>
+                    <h2>Our <b>mods.</b></h2>
+                </div>
+                <a href="pages/mods.html" class="plain-link">View all →</a>
+            </div>
+            <div class="release-grid" id="featuredReleases"></div>
+        </section>
+
+        <section class="section">
+            <div class="section-head reveal">
+                <div>
+                    <small>02 / FEATURES</small>
+                    <h2>What we <b>offer.</b></h2>
+                </div>
+            </div>
+            <div class="game-list" id="gameList"></div>
+        </section>
+
+        <section class="section">
+            <div class="community-panel reveal">
+                <div>
+                    <small>03 / COMMUNITY</small>
+                    <h2>Everything happens<br><b>inside Discord.</b></h2>
+                    <p data-site="discordDescription"></p>
+                </div>
+                <a class="button button-red" data-discord-link href="#">Open Community <span>↗</span></a>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="data/site.js"></script>
+    <script src="data/releases.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

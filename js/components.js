@@ -83,14 +83,12 @@ function setupNavigation() {
 
     if (!toggle || !nav) return;
 
-    // Hamburger toggle — no glitch, pure CSS transition
+    // Toggle menu
     toggle.addEventListener("click", function (e) {
         e.stopPropagation();
         const isOpen = nav.classList.toggle("open");
         toggle.classList.toggle("open");
         toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-        // Prevent body scroll when menu open
-        document.body.style.overflow = isOpen ? "hidden" : "";
     });
 
     // Close menu on link click
@@ -98,16 +96,14 @@ function setupNavigation() {
         link.addEventListener("click", function () {
             nav.classList.remove("open");
             toggle.classList.remove("open");
-            document.body.style.overflow = "";
         });
     });
 
-    // Close menu on outside click
+    // Close menu when clicking outside
     document.addEventListener("click", function (e) {
         if (nav.classList.contains("open") && !nav.contains(e.target) && !toggle.contains(e.target)) {
             nav.classList.remove("open");
             toggle.classList.remove("open");
-            document.body.style.overflow = "";
         }
     });
 
@@ -116,20 +112,31 @@ function setupNavigation() {
         if (e.key === "Escape" && nav.classList.contains("open")) {
             nav.classList.remove("open");
             toggle.classList.remove("open");
-            document.body.style.overflow = "";
         }
     });
 
-    // Active page highlight
+    // Close menu if window is resized above mobile breakpoint
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 800 && nav.classList.contains("open")) {
+            nav.classList.remove("open");
+            toggle.classList.remove("open");
+        }
+    });
+
+    // Highlight active link
     const current = window.location.pathname;
 
     if (current.includes("mods.html") || current.includes("release.html")) {
-        document.querySelector('[data-nav="mods"]').classList.add("active");
+        const modLink = document.querySelector('[data-nav="mods"]');
+        if (modLink) modLink.classList.add("active");
     } else if (current.includes("discord.html")) {
-        document.querySelector('[data-nav="discord"]').classList.add("active");
+        const discordLink = document.querySelector('[data-nav="discord"]');
+        if (discordLink) discordLink.classList.add("active");
     } else if (current.includes("about.html")) {
-        document.querySelector('[data-nav="about"]').classList.add("active");
+        const aboutLink = document.querySelector('[data-nav="about"]');
+        if (aboutLink) aboutLink.classList.add("active");
     } else {
-        document.querySelector('[data-nav="home"]').classList.add("active");
+        const homeLink = document.querySelector('[data-nav="home"]');
+        if (homeLink) homeLink.classList.add("active");
     }
 }

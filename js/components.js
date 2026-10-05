@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <div class="footer-bottom">
                     <span>© ${new Date().getFullYear()} ${SITE.name}</span>
-                    <span>Built for the community.</span>
+                    <span>Created by ComradexKenzy</span>
                 </div>
             </footer>
         `;
